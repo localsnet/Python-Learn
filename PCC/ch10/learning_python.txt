@@ -1,0 +1,4 @@
+In Python you can have string, integer, float, Boolean, list, tuple, dictionary and None  data type
+In Python you can use usual programming things like operators, variables,conditions,loops, user input function to interact and  manipulate that data
+In Python you can use a ready or write own functions and classes, import entire modules or some class (Python Standard Library included)  to make your programms in powerfull and maintainable way
+In Python you can and should follow a Python conventions to style your classes
