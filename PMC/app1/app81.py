@@ -9,8 +9,14 @@ data = json.load(open(filename))
 #print(data["sky"])
 word = input('Type word for definition: ')
 
-def wordfind():
+def wordfind(w):
     '''Find definition by word'''
-    print(data[word])
+# 83 Implementing Case Sensitivity
+    w = w.lower()
+#82 Accounting for non-existing Words
+    if w in data:
+        print(data[w])
+    else:
+        print('The word not found, check spelling')
 
-wordfind()
+wordfind(word)
