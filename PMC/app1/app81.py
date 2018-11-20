@@ -19,16 +19,41 @@ def wordfind(w):
     # check type of data
     print(type(data))
     print(type(data.keys()))
-    print(type((data[w])))
+#The positive result is 3 according default ratio of get_close_matches
+    print(len(get_close_matches(w, data.keys())))
+#Only for existed keys    print(type((data[w])))
 
     if w in data:
-        print(data[w])
+        return data[w]
+
+    elif len(get_close_matches(w, data.keys())) > 0:
+
+        yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(w, data.keys())[0])
+
+        if yn == "Y":
+
+            return data[get_close_matches(w, data.keys())[0]]
+
+        elif yn == "N":
+
+            return "The word doesn't exist. Please double check it."
+
+        else:
+
+            return "We didn't understand your entry."
 
     else:
-        print(get_close_matches(w, data.keys()))# > 0:
+
+        return "The word doesn't exist. Please double check it."
 
 
 
 
-
-wordfind(word)
+output = wordfind(word)
+print(type(output))
+if type(output) == list:
+# So if was "N" it's a string and else block is the case
+    for item in output:
+        print(item)
+else:
+    print(output)
