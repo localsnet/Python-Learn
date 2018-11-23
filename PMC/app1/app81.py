@@ -1,4 +1,3 @@
-# Bug task1 Please add another conditional block to the program so that the program returns the definition of names
 # that start with a capital letter.
 import json
 # 85 introduction to get_close_matches
@@ -29,8 +28,13 @@ def wordfind(w):
     # First we expect correct word by checking it in dictionary keys, otherwise try to find it with get_close_matches in elif block
     if w in data:
         return data[w]
+    # Bugfix task1 Please add another conditional block to the program so that the program returns the definition of
+    # names (from first capital letter)
     elif w.title() in data:
         return data[w.title()]
+    # Bugfix task2 conditional that makes the program return the definition of UPPERCASE words
+    elif w.upper() in data:
+        return data[w.upper()]
 
 
 
